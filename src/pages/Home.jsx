@@ -2,73 +2,96 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <section className="bg-white rounded-2xl shadow-sm border p-6 md:p-10">
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="flex-1">
-            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
-              Build your internship journey like a real product 🚀
+    <div>
+      {/* HERO */}
+      <section className="bg-gradient-to-br from-gray-900 to-black text-white">
+        <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+              Build Real Skills. <br /> Not Just Certificates.
             </h1>
-            <p className="mt-3 text-gray-600 text-base md:text-lg">
-              This portal is a demo frontend for an internship/learning platform
-              — with responsive UI, clean flow, and a dashboard experience.
+            <p className="mt-5 text-gray-300 text-lg">
+              Join the NotWorking Internship Program and work on real-world
+              projects designed to make you industry-ready.
             </p>
 
-            <div className="mt-6 flex gap-3 flex-wrap">
+            <div className="mt-8 flex gap-4 flex-wrap">
               <Link
                 to="/apply"
-                className="px-5 py-3 rounded-xl bg-black text-white font-semibold hover:opacity-90 transition"
+                className="bg-white text-black px-6 py-3 rounded-xl font-semibold transition hover:scale-105"
               >
                 Apply Now
               </Link>
               <Link
                 to="/dashboard"
-                className="px-5 py-3 rounded-xl bg-gray-100 text-black font-semibold hover:bg-gray-200 transition"
+                className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black transition"
               >
                 View Dashboard
               </Link>
             </div>
           </div>
 
-          <div className="flex-1 w-full">
-            <div className="rounded-2xl border bg-gray-100 p-6">
-              <p className="text-sm font-semibold text-gray-700">
-                Platform Highlights
-              </p>
-              <ul className="mt-4 space-y-3 text-gray-700">
-                <li>✅ Responsive layouts (Mobile-first)</li>
-                <li>✅ Internship application flow</li>
-                <li>✅ Dashboard + progress tracking</li>
-                <li>✅ UX refinement (loading skeletons)</li>
-              </ul>
-            </div>
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+            alt="Internship"
+            className="rounded-2xl shadow-lg"
+          />
         </div>
       </section>
 
-      <section className="mt-10 grid md:grid-cols-3 gap-6">
-        {[
-          {
-            title: "Home",
-            desc: "Landing page + clear CTA for students.",
-          },
-          {
-            title: "Apply",
-            desc: "Form-based internship application UI.",
-          },
-          {
-            title: "Dashboard",
-            desc: "Shows task progress & application status.",
-          },
-        ].map((card, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-2xl shadow-sm border p-6 hover:shadow-md transition"
-          >
-            <h3 className="font-bold text-lg">{card.title}</h3>
-            <p className="mt-2 text-gray-600">{card.desc}</p>
+      {/* ABOUT */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold text-center">Why NotWorking?</h2>
+
+        <div className="mt-12 grid md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Real Projects",
+              text: "Work on industry-style tasks instead of theoretical assignments.",
+            },
+            {
+              title: "Structured Roadmap",
+              text: "Weekly learning roadmap with clear milestones.",
+            },
+            {
+              title: "Career Focused",
+              text: "Designed to strengthen resumes and portfolios.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white p-6 rounded-2xl border shadow-sm transition hover:shadow-md"
+            >
+              <h3 className="font-bold text-lg">{item.title}</h3>
+              <p className="mt-2 text-gray-600">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DOMAINS */}
+      <section className="bg-gray-100 py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center">
+            Internship Domains
+          </h2>
+
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              "Web Development",
+              "UI / UX Design",
+              "Data Science",
+              "Android Development",
+            ].map((domain, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-2xl border text-center font-semibold transition hover:scale-105"
+              >
+                {domain}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </section>
     </div>
   );

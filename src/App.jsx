@@ -10,7 +10,6 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
         <Navbar />
-
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -18,7 +17,6 @@ export default function App() {
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
-
         <Footer />
       </div>
     </BrowserRouter>

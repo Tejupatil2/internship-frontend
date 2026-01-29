@@ -5,86 +5,38 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 1200);
-    return () => clearTimeout(t);
+    setTimeout(() => setLoading(false), 1200);
   }, []);
 
-  const tasks = [
-    { week: "Week 1", title: "User Flow + Wireframes", status: "Completed" },
-    { week: "Week 2", title: "Pages + Components", status: "Completed" },
-    { week: "Week 3", title: "Responsive + UX Polish", status: "In Progress" },
-    { week: "Week 4", title: "Lighthouse + Deployment", status: "Pending" },
+  const roadmap = [
+    { week: "Week 1", task: "User Flow & Wireframes", status: "Completed" },
+    { week: "Week 2", task: "Component Development", status: "Completed" },
+    { week: "Week 3", task: "Responsive Refinement", status: "Completed" },
+    { week: "Week 4", task: "Deployment & QA", status: "Completed" },
   ];
 
-  const getStatusStyle = (status) => {
-    if (status === "Completed")
-      return "bg-green-100 text-green-800 border-green-200";
-    if (status === "In Progress")
-      return "bg-yellow-100 text-yellow-800 border-yellow-200";
-    return "bg-gray-100 text-gray-700 border-gray-200";
-  };
-
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="bg-white rounded-2xl shadow-sm border p-6 w-full md:w-1/3">
-          <h2 className="text-xl font-extrabold">Student Profile</h2>
+    <div className="max-w-6xl mx-auto px-6 py-16">
+      <h2 className="text-3xl font-bold mb-6">Intern Dashboard</h2>
 
-          {loading ? (
-            <div className="mt-4">
-              <LoaderSkeleton />
-            </div>
-          ) : (
-            <div className="mt-4 space-y-2">
-              <p className="text-sm text-gray-500">Name</p>
-              <p className="font-semibold">Demo Student</p>
-
-              <p className="text-sm text-gray-500 mt-4">Domain</p>
-              <p className="font-semibold">Web Development (Frontend)</p>
-
-              <p className="text-sm text-gray-500 mt-4">Application Status</p>
-              <span className="inline-block px-3 py-1 rounded-lg text-sm font-semibold bg-blue-100 text-blue-800 border border-blue-200">
-                Active
+      {loading ? (
+        <LoaderSkeleton />
+      ) : (
+        <div className="grid md:grid-cols-2 gap-6">
+          {roadmap.map((item, i) => (
+            <div
+              key={i}
+              className="bg-white p-6 rounded-2xl border shadow-sm transition hover:shadow-md"
+            >
+              <p className="text-sm text-gray-500">{item.week}</p>
+              <h3 className="font-bold text-lg mt-1">{item.task}</h3>
+              <span className="inline-block mt-3 px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+                {item.status}
               </span>
             </div>
-          )}
+          ))}
         </div>
-
-        <div className="bg-white rounded-2xl shadow-sm border p-6 w-full md:w-2/3">
-          <h2 className="text-xl font-extrabold">Internship Progress</h2>
-          <p className="text-gray-600 mt-2">
-            Track weekly tasks and completion status.
-          </p>
-
-          {loading ? (
-            <div className="mt-6">
-              <LoaderSkeleton />
-            </div>
-          ) : (
-            <div className="mt-6 space-y-4">
-              {tasks.map((t, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col md:flex-row md:items-center justify-between gap-3 border rounded-xl p-4"
-                >
-                  <div>
-                    <p className="font-bold">{t.week}</p>
-                    <p className="text-gray-600 text-sm">{t.title}</p>
-                  </div>
-
-                  <span
-                    className={`px-3 py-1 rounded-lg text-sm font-semibold border ${getStatusStyle(
-                      t.status
-                    )}`}
-                  >
-                    {t.status}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+      )}
     </div>
   );
 }
