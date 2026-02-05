@@ -8,7 +8,7 @@ export default function Apply() {
       <div className="bg-white p-10 rounded-2xl border shadow-sm">
         <h2 className="text-3xl font-bold">Internship Application</h2>
         <p className="text-gray-600 mt-2">
-          Fill in your details carefully. Our team will review your application.
+          Fill in your details carefully. Our team reviews every application.
         </p>
 
         {submitted ? (
@@ -23,8 +23,17 @@ export default function Apply() {
             }}
             className="mt-8 grid gap-6"
           >
-            <input required placeholder="Full Name" className="p-3 border rounded-xl" />
-            <input required type="email" placeholder="Email" className="p-3 border rounded-xl" />
+            <input
+              required
+              placeholder="Full Name"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-black"
+            />
+            <input
+              required
+              type="email"
+              placeholder="Email"
+              className="p-3 border rounded-xl focus:ring-2 focus:ring-black"
+            />
             <select className="p-3 border rounded-xl">
               <option>Web Development</option>
               <option>UI / UX Design</option>
@@ -36,7 +45,7 @@ export default function Apply() {
               className="p-3 border rounded-xl min-h-[120px]"
             />
 
-            <button className="bg-black text-white py-3 rounded-xl font-semibold transition hover:scale-105">
+            <button className="bg-black text-white py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
               Submit Application
             </button>
           </form>

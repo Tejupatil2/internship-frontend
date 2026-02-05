@@ -9,15 +9,15 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold">
+          <div className="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center font-bold">
             NW
           </div>
           <div>
             <p className="font-bold leading-4">NotWorking</p>
-            <p className="text-xs text-gray-500">Internship Platform</p>
+            <p className="text-xs text-gray-500">Internship Portal</p>
           </div>
         </div>
 
