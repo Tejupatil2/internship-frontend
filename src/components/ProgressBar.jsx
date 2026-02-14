@@ -1,10 +1,8 @@
-export default function ProgressBar({ percent }) {
+export default function StatsCard({ value, label }) {
   return (
-    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-      <div
-        className="bg-black h-full transition-all duration-500"
-        style={{ width: `${percent}%` }}
-      ></div>
+    <div className="bg-white p-6 rounded-2xl border shadow-sm text-center">
+      <p className="text-3xl font-extrabold">{value}</p>
+      <p className="text-gray-600 mt-1">{label}</p>
     </div>
   );
 }

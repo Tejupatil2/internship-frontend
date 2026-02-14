@@ -1,35 +1,24 @@
-export default function Footer() {
+import { NavLink } from "react-router-dom";
+
+export default function Navbar() {
+  const link = ({ isActive }) =>
+    `px-3 py-2 rounded-lg text-sm font-semibold transition ${
+      isActive ? "bg-black text-white" : "hover:bg-gray-200"
+    }`;
+
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div>
-          <h3 className="text-white font-bold text-lg">NotWorking</h3>
-          <p className="text-sm mt-3">
-            A skill-first internship platform focused on real-world learning,
-            practical tasks, and career readiness.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="text-white font-semibold mb-3">Internship Domains</h4>
-          <ul className="space-y-2 text-sm">
-            <li>Web Development</li>
-            <li>UI / UX Design</li>
-            <li>Data Science</li>
-            <li>Android Development</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-white font-semibold mb-3">Contact</h4>
-          <p className="text-sm">support@notworking.com</p>
-          <p className="text-sm">India</p>
-        </div>
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+        <div className="font-bold text-lg">NotWorking</div>
+        <nav className="flex gap-2 flex-wrap">
+          <NavLink to="/" className={link}>Home</NavLink>
+          <NavLink to="/programs" className={link}>Programs</NavLink>
+          <NavLink to="/mentors" className={link}>Mentors</NavLink>
+          <NavLink to="/media" className={link}>Media</NavLink>
+          <NavLink to="/dashboard" className={link}>Dashboard</NavLink>
+          <NavLink to="/apply" className={link}>Apply</NavLink>
+        </nav>
       </div>
-
-      <div className="text-center text-sm border-t border-gray-700 py-4">
-        © {new Date().getFullYear()} NotWorking Internship Program
-      </div>
-    </footer>
+    </header>
   );
 }

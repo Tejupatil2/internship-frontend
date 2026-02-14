@@ -5,7 +5,7 @@ export default function FAQItem({ question, answer }) {
 
   return (
     <div
-      className="border rounded-xl p-4 cursor-pointer transition hover:bg-gray-50"
+      className="border rounded-xl p-4 cursor-pointer"
       onClick={() => setOpen(!open)}
     >
       <h4 className="font-semibold">{question}</h4>

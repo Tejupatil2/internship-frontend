@@ -6,97 +6,70 @@ import FAQItem from "../components/FAQItem";
 export default function Home() {
   return (
     <div>
-      {/* HERO */}
-      <section className="bg-gradient-to-br from-black to-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+      {/* VIDEO HERO */}
+      <section className="relative h-[90vh] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="https://cdn.coverr.co/videos/coverr-working-on-laptop-1608/1080p.mp4"
+        />
+        <div className="relative z-10 bg-black/60 h-full flex items-center">
+          <div className="max-w-6xl mx-auto px-6 text-white">
+            <h1 className="text-4xl md:text-6xl font-extrabold">
               Build Industry-Ready Skills
             </h1>
-            <p className="mt-6 text-gray-300 text-lg max-w-xl">
-              NotWorking is a structured internship platform focused on real
-              projects, real deadlines, and real growth.
+            <p className="mt-6 max-w-xl text-lg text-gray-200">
+              Learn by building real projects under structured mentorship.
             </p>
-
-            <div className="mt-10 flex gap-4">
+            <div className="mt-8 flex gap-4">
               <Link
                 to="/apply"
-                className="bg-white text-black px-7 py-3 rounded-xl font-semibold hover:scale-105 transition"
+                className="bg-white text-black px-6 py-3 rounded-xl font-semibold"
               >
                 Apply Now
               </Link>
               <Link
-                to="/dashboard"
-                className="border border-white px-7 py-3 rounded-xl font-semibold hover:bg-white hover:text-black transition"
+                to="/programs"
+                className="border border-white px-6 py-3 rounded-xl"
               >
-                Dashboard
+                View Programs
               </Link>
             </div>
           </div>
-
-          <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998"
-            alt="Team work"
-            className="rounded-3xl shadow-2xl"
-          />
         </div>
       </section>
 
       {/* STATS */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <StatsCard value="25,000+" label="Students Applied" />
+        <StatsCard value="25,000+" label="Applications" />
         <StatsCard value="120+" label="Mentors" />
-        <StatsCard value="15+" label="Internship Domains" />
+        <StatsCard value="15+" label="Domains" />
         <StatsCard value="92%" label="Completion Rate" />
-      </section>
-
-      {/* ROADMAP */}
-      <section className="bg-gray-100 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center">
-            4-Week Internship Roadmap
-          </h2>
-
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
-            {[
-              "Orientation & Fundamentals",
-              "Project Development",
-              "Refinement & Optimization",
-              "Deployment & Review",
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-2xl border shadow-sm"
-              >
-                <h3 className="font-bold text-lg">Week {i + 1}</h3>
-                <p className="text-gray-600 mt-2">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* TESTIMONIALS */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-3xl font-bold text-center">What Interns Say</h2>
-
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           <TestimonialCard
             name="Ananya Sharma"
-            role="Web Development Intern"
-            text="This internship felt like working in a real startup."
+            role="Web Intern"
+            text="This internship felt like working in a real company."
             image="https://randomuser.me/api/portraits/women/44.jpg"
           />
           <TestimonialCard
             name="Rahul Verma"
-            role="Data Science Intern"
-            text="Weekly roadmap kept me disciplined and focused."
+            role="Data Intern"
+            text="Structured roadmap helped me stay consistent."
             image="https://randomuser.me/api/portraits/men/32.jpg"
           />
           <TestimonialCard
             name="Sneha Patil"
             role="UI/UX Intern"
-            text="Best learning experience I’ve had so far."
+            text="Best learning experience so far."
             image="https://randomuser.me/api/portraits/women/65.jpg"
           />
         </div>
@@ -106,19 +79,18 @@ export default function Home() {
       <section className="bg-gray-100 py-20">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center">FAQs</h2>
-
           <div className="mt-10 space-y-4">
             <FAQItem
               question="Is this internship paid?"
-              answer="This internship focuses on skill-building and certification."
+              answer="The internship focuses on learning and certification."
             />
             <FAQItem
               question="Is there a certificate?"
-              answer="Yes, certificates are provided after successful completion."
+              answer="Yes, certificates are provided after completion."
             />
             <FAQItem
               question="Is it beginner friendly?"
-              answer="Yes, structured roadmap supports beginners."
+              answer="Yes, the roadmap is designed for beginners."
             />
           </div>
         </div>
